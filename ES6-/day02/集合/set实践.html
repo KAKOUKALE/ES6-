@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, 2, 3, 4, 5, 4, 3, 2, 1]
+        // 1.数组去重
+        arr = [...new Set(arr)]    //[1, 2, 3, 4, 5]
+
+        // 2.交集
+        let arr2 = [4, 5, 6, 5, 4]
+        /* let result = [...new Set(arr)].filter(item => {
+         let ss2 = new Set(arr2)
+        if (ss2.has(item)) {
+            return true
+        } else {
+            return false
+            }) */
+
+        let result = [...new Set(arr)].filter(item => new Set(arr2).has(item))
+        console.log(result) //[4, 5]
+
+        // 3.并集
+        let ss = [...new Set([...arr, ...arr2])]
+        console.log(ss) //[1, 2, 3, 4, 5, 6]
+
+        // 4.差集
+        let redset = [...new Set(arr)].filter(item => !new Set(arr2).has(item))
+        console.log(redset) //[1, 2, 3]
+    </script>
+</body>
+
+</html>

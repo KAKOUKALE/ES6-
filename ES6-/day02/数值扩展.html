@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* // 1.Number.EPSILON 是 JS表示的最小精度
+        console.log(0.1 + 0.2)  //0.30000000000000004
+        console.log(0.1 + 0.2 === 0.3)  //false
+        function equal(a, b) {
+            if(Math.abs(a-b) < Number.EPSILON) {
+                return true
+            } else {
+                return false
+            }
+        }
+        console.log(equal(0.1 + 0.2, 0.3))  //true
+
+        // 2.二级制和八进制
+        let b = 0b1010  //10
+        let o = 0o777   //511
+        let x = 0xff    //255
+        console.log(x)
+
+        //Number.isFinite() 检测一个数值是否为有限数
+
+        // Number.isNaN 检测一个数值是否为 NaN
+
+        // Number.parseInt Number.parseFloat 字符串转整数、小数
+
+        // Number.isInterger 判断一个数是否为整数
+
+        // Math.trunc  将数字的小数部分抹掉
+
+        // Math.sign  判断一个数到底是正数 负数 还是零 */
+
+
+        // 1.Object.is  判断两个值是否完全相等
+        console.log(Object.is(0.3, 0.3))    //true
+        console.log(Object.is(NaN, NaN))    //true
+        console.log(NaN === NaN)            //false
+
+        // 2.Object.assign 对象的合并
+        let obj1 = {
+            name: 'Leah',
+            age: 23,
+            gender: 'femal',
+            height:'169cm'
+        }
+        let obj2 = {
+            name: 'Mike',
+            age: 23,
+            gender: 'female',
+            weight: '45kg'
+        }
+        console.log(Object.assign(obj1, obj2))
+        // 都有的属性会覆盖，只有一方有点会留着
+        //{name: 'Mike', age: 23, gender: 'female'}
+        //{name: 'Mike', age: 23, gender: 'female', weight: '45kg'}
+        // {name: 'Mike', age: 23, gender: 'female', height: '169cm', weight: '45kg'}
+
+        // 3.Object.setPrototypeOf  设置原型对象 Object.getPrototypeOf 获取原型对象
+        // Object.setPrototypeOf(school, address) 后面的对象会称为前一个对象的原型对象
+        // Object.getPrototypeOf(school)  获取school的原型对象
+        
+    </script>
+</body>
+</html>

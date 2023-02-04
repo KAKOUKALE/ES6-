@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+       /*  function* gen(args) {      //函数名和function中间有一个 * 
+            console.log(args)
+            let Monday = yield 'Monday';    //yield是函数代码的分隔符
+            console.log(Monday)
+            let Tuesday = yield 'Tuesday';
+            console.log(Tuesday)
+            let Wednesday = yield 'Wednesday';
+            console.log(Wednesday)
+            let Thursday = yield 'Thursday';
+            console.log(Thursday)
+            let Friday = yield 'Friday';
+            console.log(Friday)
+        }
+        let iterator = gen('workday')
+        iterator.next()
+        iterator.next('星期一')
+        iterator.next('星期二')
+        iterator.next('星期三')
+        iterator.next('星期四')
+        iterator.next('星期五') */
+
+        // console.log('***********************')
+        // for (let v of gen()) {
+        //     console.log(v)
+        //     /**
+        //      * Monday
+        //      * Tuesday
+        //      * Wednesday
+        //      * Thursday
+        //      * Friday
+        //     */
+        // }
+
+        /* function one() {
+            // 等待超时调用
+            setTimeout(() => {
+                console.log('111')
+                iterator.next()
+            }, 1000)
+        }
+        function two() {
+            // 等待超时调用
+            setTimeout(() => {
+                console.log('222')
+                iterator.next()
+            }, 2000)
+        }
+        function three() {
+            // 等待超时调用
+            setTimeout(() => {
+                console.log('333')
+                iterator.next()
+            }, 3000)
+        }
+
+        function * gen() {
+            yield one()
+            yield two()
+            yield three()
+        }
+
+        let iterator = gen()
+        iterator.next() */
+
+        function UserData() {
+            setTimeout(() => {
+                let data = '用户数据'
+                iterator.next(data)
+            }, 1000)
+        }
+        function DealData() {
+            setTimeout(() => {
+                let data = '订单数据'
+                iterator.next(data)
+            }, 1000)
+        }
+        function GoodsData() {
+            setTimeout(() => {
+                let data = '商品数据'
+                iterator.next(data)
+            }, 1000)
+        }
+
+        function * gen() {
+            let userDate = yield UserData()
+            console.log(userDate)
+            let dealData = yield DealData()
+            console.log(dealData)
+            let goodsDtata = yield GoodsData()
+            console.log(goodsDtata)
+        }
+
+        let iterator = gen()
+        iterator.next()
+    </script>
+</body>
+
+</html>

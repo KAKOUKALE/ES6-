@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 声明一个数组
+        let arr  = ['Friday', 'Saturday', 'Sunday']
+        /**
+         * 使用for...of遍历数组
+        */
+       for (let v of arr) {
+        console.log(v)      //打印键值
+       }
+       for (let v in arr) {
+        console.log(v)      //打印键名
+       }
+
+       let iterator = arr[Symbol.iterator]()
+       console.log(iterator)
+
+       //调用next对象方法
+       console.log(iterator.next())     //{value: 'Friday', done: false}
+       console.log(iterator.next())     //{value: 'Saturday', done: false}
+       console.log(iterator.next())     //{value: 'Sunday', done: false}
+       console.log(iterator.next())     //{value: undefined, done: true}
+    </script>
+</body>
+</html>

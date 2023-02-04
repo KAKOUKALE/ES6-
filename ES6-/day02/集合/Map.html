@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let m = new Map()
+        m.set('name', 'Leah')
+        /**
+         * Map(1)
+         *   [[Entries]]
+         *     0: {"name" => "Leah"}
+         *     size: 1
+         *   [[Prototype]]: Map
+
+        */
+        m.set('Today', () => {   //Map(2) {'name' => 'Leah', 'Today' => ƒ}
+            console.log('cloudy')
+        })
+
+        let key = {
+            name: 'Leah'
+        }
+        m.set(key, [23, 'femal', '江西南昌'])
+
+        console.log(m.size) //3
+        m.delete('name')    //Map(2) {'Today' => ƒ, {…} => Array(3)}
+        console.log(m.get('Today'))
+        /**
+         * () => {   
+         *  console.log('cloudy')
+         *  }
+        */
+       //m.clear()    //Map(0) {size: 0}
+        for(let v of m) {
+            console.log(v)  //(2) ['Today', ƒ]  [{…}, Array(3)]
+        }
+
+        console.log(m)
+    </script>
+</body>
+
+</html>

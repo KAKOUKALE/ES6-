@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* function Phone(brand, price) {
+            this.brand = brand
+            this.price = price
+        }
+        Phone.prototype.call = function() {
+            console.log('我可以打电话')
+        }
+        // 实例化对象
+        let Vivo = new Phone('Vivo', 2399)
+        Vivo.call()
+        console.log(Vivo)
+
+        // class
+        class MobilePhone {
+            // 构造方法 名字只能使用这个
+            constructor(brand, price) {
+                this.brand = brand
+                this.price = price
+            }
+            // 方法必须使用该种语法，不能使用ES5的对象完整形式
+            call() {
+                console.log('我拍照还可以！')
+            }
+        }
+        let onePlus = new MobilePhone('1+', 4999)
+        onePlus.call()
+        console.log(onePlus) */
+
+
+        /* class Phone {
+            static name = 'phone'   //属性只属于构造类，而不属于实例
+        }
+        let nokia = new Phone()
+        console.log(nokia.name) //undefined */
+
+        /* function Phone(brand, price) {
+            this.brand = brand
+            this.price = price
+        }
+        Phone.prototype.call = function() {
+            console.log('我可以打电话')
+        }
+        function SmartPhone(brand, price, color, size) {
+            Phone.call(this, brand, price)
+            this.color = color
+            this.size =size
+        }
+        // 设置子级构造函数原型
+        SmartPhone.prototype = new Phone
+        SmartPhone.prototype.constructor = SmartPhone
+
+        // 声明子类方法
+        SmartPhone.prototype.photo = function() {
+            console.log('我可以拍照')
+        }
+
+        let boluo = new SmartPhone('菠萝', 3999, '黄色', '5.5inch')
+        console.log(boluo)  //SmartPhone {brand: '菠萝', price: 3999, color: '黄色', size: '5.5inch'} */
+
+
+        /* class Phone {
+            constructor(brand, price) {
+                this.brand = brand
+                this.price = price
+            }
+            call() {
+                console.log('我可以打电话')
+            }
+        }
+        class SmartPhone extends Phone {
+            constructor(brand, price, color, size) {
+                super(brand, price) //Phone.call(this, brand, price)
+                this.color = color
+                this.size = size
+            }
+            photo() {
+                console.log('我可以拍照')
+            }
+        }
+
+        let chuizi = new SmartPhone('锤子', 2999, '黑色', '4.7inch')
+        console.log(chuizi)
+        chuizi.call()
+        chuizi.photo() */
+
+
+        class Phone {
+            get price() {
+                console.log('price属性被读取了')
+                return 'Hello!'
+            }
+            set price(value) {
+                console.log('price属性被修改了')
+                return value
+            }
+        }
+        let p = new Phone()
+        p.price = 12
+        console.log(p.price)
+    </script>
+</body>
+
+</html>

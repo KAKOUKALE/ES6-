@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let s = Symbol('aaa')
+        let m = Symbol('aaa')
+        console.log(s,typeof s)     //Symbol(aaa) 'symbol'
+        console.log(m,typeof m)     //Symbol(aaa) 'symbol'
+        console.log(s === m)        //false
+
+        let x = Symbol.for('emmm')
+        let y = Symbol.for('emmm')
+        console.log(x === y)        //true
+
+        // 第二种添加方式
+        let day = {
+            date: 'Monday',
+            [Symbol('daylight')]: function() {
+                console.log('daylight')
+            },
+            [Symbol('daynight')]: function() {
+                console.log('daynight')
+                
+            }
+        }
+        console.log(day)
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // async函数
+        async function fn() {
+            //1.如果返回的是一个非Promise的对象，则fn（）返回的结果就是成功状态的Promise对象，值为返回值
+            //return 'async函数返回'  //Promise {<fulfilled>: 'async函数返回'}
+
+            //2.如果返回的是一个Promise对象，则fn（）返回的结果与内部Promise对象的结果一致
+
+            //3.如果返回的是抛出错误，则fn（）返回的就是失败状态的Promise对象
+            //throw new Error('出错啦！！！')
+
+        }
+        let result  = fn()
+        console.log(result)
+    </script>
+</body>
+
+</html>
